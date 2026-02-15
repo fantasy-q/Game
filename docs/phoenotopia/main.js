@@ -20,8 +20,6 @@ async function loadAndRenderCSVs() {
     try {
         const allDataArrays = await Promise.all(files.map(readCSV));
         const combinedData = allDataArrays.flat();
-
-        console.debug(allDataArrays)
         console.debug(combinedData)
 
         // --- 内存拼接核心逻辑开始 ---
@@ -81,17 +79,7 @@ async function loadAndRenderCSVs() {
 
 loadAndRenderCSVs();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+window.onload = () => {
+    performFontUpdate(); // 首次扫描
+    setupObserver();     // 启动监听
+};

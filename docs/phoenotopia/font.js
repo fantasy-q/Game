@@ -1,4 +1,8 @@
-async function fontDynamicSubsetting() {
+let globalCharSet = new Set();
+let fontUpdateTimer = null;
+let lastUrl = "";
+
+async function performFontUpdate() {
     // 1. 抓取页面文本
     const allText = document.body.innerText;
     const uniqueChars = [...new Set(allText.replace(/\s/g, ''))].sort().join('');
@@ -25,28 +29,39 @@ async function fontDynamicSubsetting() {
         const response = await fetch(fontUrl);
         let cssText = await response.text();
 
-        const oldStyle = document.getElementById('dynamic-fonts');
-        if (oldStyle) oldStyle.remove();
-
-        const styleTag = document.createElement('style');
-        styleTag.id = 'dynamic-fonts';
+        let styleTag = document.getElementById('dynamic-injected-fonts');
+        if (!styleTag) {
+            styleTag = document.createElement('style');
+            styleTag.id = 'dynamic-injected-fonts';
+            document.head.appendChild(styleTag);
+        }
         styleTag.textContent = cssText;
-        document.head.appendChild(styleTag);
     } catch (err) {
         console.error("字体加载失败:", err);
         document.body.classList.add('fonts-loaded'); // 失败也显示，使用兜底字体
     }
 }
-const fontObserver = new MutationObserver((mutations) => {
-    // 使用防抖处理，避免短时间内大量插入导致的频繁请求
-    clearTimeout(window.fontTimeout);
-    window.fontTimeout = setTimeout(() => {
-        fontDynamicSubsetting();
-    }, 300);
-});
-fontObserver.observe(document.body, {
-    // childList: true,
-    subtree: true,
-    characterData: true
-});
-window.onload = fontDynamicSubsetting;
+
+function triggerFontSync() {
+    if (fontUpdateTimer) clearTimeout(fontUpdateTimer);
+    fontUpdateTimer = setTimeout(performFontUpdate, 500); // 500ms 内没有新变化才请求
+}
+
+function setupObserver() {
+    const observer = new MutationObserver((mutations) => {
+        let shouldUpdate = false;
+        mutations.forEach(mutation => {
+            if (mutation.type === 'childList' || mutation.type === 'characterData') {
+                shouldUpdate = true;
+            }
+        });
+        if (shouldUpdate) triggerFontSync();
+    });
+
+    // 监听整个 body，包括子节点变化、文本内容变化、所有后代
+    observer.observe(document.body, {
+        childList: true,
+        characterData: true,
+        subtree: true
+    });
+}
