@@ -1,0 +1,47 @@
+// 在浏览器 Console 执行
+
+const arr_heart = [
+    "HEART_PANSELO_1", "HEART_PANSELO_2", "HEART_ANURI_1", "HEART_FLOWER_1", "HEART_ATELO_1", "HEART_ATAI_6", "HEART_EX_VAULT", "HEART_ATAI_5", "HEART_ATAI_1", "HEART_ATAI_2", "HEART_ATAI_4", "HEART_ATAI_3", "HEART_BANDIT_1", "HEART_OGEO_1", "HEART_BANDIT_2", "HEART_BANDIT_3", "HEART_BANDIT_4", "HEART_ASTRID_1", "HEART_ASTRID_2", "HEART_GEO_1", "HEART_GEO_2", "HEART_FRAN_1", "HEART_FRAN_2", "HEART_THOMAS_1", "HEART_FLORET_1", "HEART_DAEA_1", "HEART_DAEA_2", "HEART_DAEA_3", "HEART_BOSS_KATASH", "HEART_SEWERS_1", "HEART_TOWER_2", "HEART_TOWER_1", "HEART_SUBTERRA_1", "HEART_SUBTERRA_2", "HEART_WHEAT_1", "HEART_WHEAT_2", "HEART_BARN_1", "HEART_POOKI_1", "HEART_FISH_1", "HEART_ROYARC_1", "HEART_ROYARC_2", "HEART_WALL_1", "HEART_WALL_2", "HEART_WALL_3", "HEART_SCORCH_2", "HEART_SCORCH_1", "HEART_SCORCH_3", "HEART_MUL_1", "HEART_BOSS_QUEEN", "HEART_MUL_2", "HEART_TERRA_1", "HEART_MEGALITH_1", "HEART_PHOENIX_1", "HEART_PHOENIX_2", "HEART_PHOENIX_3",
+]
+
+const arr_oxy = [
+    "OXY_FOREST_1", "OXY_ANURI_1", "OXY_FLOWER_1", "OXY_ATELO_1", "OXY_ADAR_1", "OXY_EX_VAULT", "OXY_FISH_1", "OXY_BANDIT_1", "OXY_BANDIT_2", "OXY_RAVINE_1", "OXY_DAEA_4", "OXY_ASTRID_1", "OXY_GEO_1", "OXY_FRAN_1", "OXY_THOMAS_1", "OXY_DAEA_3", "OXY_DAEA_1", "OXY_DAEA_2", "OXY_JAIL_1", "OXY_TOWER_1", "OXY_BARN_1", "OXY_ROYARC_1", "OXY_WALL_1", "OXY_BO_RACE", "OXY_WALL_2", "OXY_AGEO_1", "OXY_SCORCH_1", "OXY_MUL_1", "OXY_MUL_3", "OXY_MUL_2", "OXY_TERRA_1", "OXY_PLANTO_1", "OXY_PRISTINE_1",
+]
+
+const arr_moon = [
+    "MOON_FIELD_1", "MOON_FIELD_2", "MOON_MAP_2", "MOON_DOKI_1", "MOON_ANURI_4", "MOON_ANURI_3", "MOON_ANURI_2", "MOON_ANURI_6", "MOON_FISH_3", "MOON_ANURI_1", "MOON_FLOWER_1", "MOON_FLOWER_2", "MOON_ATELO_1", "MOON_ATELO_3", "MOON_ATELO_2", "MOON_ATELO_4", "MOON_RHODUS_1", "MOON_RHODUS_2", "MOON_FISH_2", "MOON_ATAI_2", "MOON_ATAI_9", "MOON_ATAI_4", "MOON_ATAI_5", "MOON_ATAI_6", "MOON_ATAI_1", "MOON_ATAI_3", "MOON_ATAI_8", "MOON_ATAI_7", "MOON_ACCESS_1", "MOON_MAP_1", "MOON_BANDIT_1", "MOON_BANDIT_4", "MOON_BANDIT_3", "MOON_BANDIT_2", "MOON_BANDIT_5", "MOON_BANDIT_6", "MOON_BANDIT_7", "MOON_RAVINE_4", "MOON_RAVINE_1", "MOON_RAVINE_2", "MOON_RAVINE_3", "MOON_FISH_4", "MOON_FISH_1", "MOON_DAETAI_1", "MOON_DAETAI_2", "MOON_MAP_3", "MOON_FISH_6", "MOON_THOMAS_2", "MOON_THOMAS_1", "MOON_DAEA_TOWN_5", "MOON_DAEA_TOWN_1", "MOON_DAEA_TOWN_2", "MOON_DAEA_TOWN_3", "MOON_DAEA_TOWN_6", "MOON_DAEA_TOWN_4", "MOON_DAEA_SEWS_1", "MOON_DAEA_SEWS_2", "MOON_DAEA_SEWS_3", "MOON_JAIL_2", "MOON_JAIL_1", "MOON_JAIL_3", "MOON_JAIL_4", "MOON_TOWER_1", "MOON_TOWER_4", "MOON_TOWER_2", "MOON_TOWER_3", "MOON_TOWER_5", "MOON_SUBTERRA_1", "MOON_SUBTERRA_3", "MOON_SUBTERRA_2", "MOON_FISH_5", "MOON_WHEAT_1", "MOON_WHEAT_2", "MOON_MAP_4", "MOON_BARN_1", "MOON_BARN_4", "MOON_BARN_2", "MOON_BARN_3", "MOON_PILLAR_1", "MOON_BEACH_1", "MOON_ROYARC_2", "MOON_ROYARC_1", "MOON_ROYARC_3", "MOON_WALL_S_2", "MOON_WALL_S_1", "MOON_MAP_5", "MOON_WALL_N_1", "MOON_WALL_N_2", "MOON_MAP_6", "MOON_SCORCH_1", "MOON_SCORCH_2", "MOON_SCORCH_3", "MOON_SCORCH_4", "MOON_MUL_1", "MOON_MUL_3", "MOON_MUL_2", "MOON_MUL_4", "MOON_MUL_6", "MOON_MUL_5", "MOON_MUL_7", "MOON_FISH_7", "MOON_OLWOOD_3", "MOON_OLWOOD_1", "MOON_OLWOOD_2", "MOON_MEGALITHS_1", "MOON_PRISTINE_1", "MOON_MEGALITHS_2", "MOON_PHOENIX_2", "MOON_PHOENIX_1", "MOON_PHOENIX_3", "MOON_PHOENIX_4",
+]
+
+function findByCode(code) {
+    // 所有的链接，排除掉没有 href 的
+    const allLinks = Array.from(document.querySelectorAll('a[href]'));
+
+    // 打印一下找到的链接数量，方便调试
+    console.log(`正在页面搜索，共找到 ${allLinks.length} 个链接...`);
+
+    const targetLink = allLinks.find(a =>
+        a.textContent.trim().includes(code) ||
+        a.innerText.trim().includes(code)
+    );
+
+    if (!targetLink) {
+        return console.error("错误：页面中没找到包含 " + code + " 的链接。");
+    }
+
+    const url = new URL(targetLink.href);
+    const result = {
+        p: url.searchParams.get('p'),
+        t: url.searchParams.get('t'),
+        c: code
+    };
+    return result;
+}; // 在这里修改你要找的 ID
+
+
+const array2 = arr_moon.map(code => {
+    const result = findByCode(code)
+    if (!result) console.log(code)
+    return result
+})
+
+array2

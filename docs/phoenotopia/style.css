@@ -1,0 +1,74 @@
+html {
+    color-scheme: light dark;
+}
+
+html[data-theme="dark"] body {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0 1em;
+    font-family: Montserrat, "Noto Serif SC", serif;
+}
+
+@media (min-width: 768px) {
+    body {
+        width: 50%;
+    }
+}
+
+h2 {
+    text-align: center;
+
+    &.area {
+        &span {
+            margin-left: .5em;
+        }
+    }
+}
+
+
+h3 {
+    & ruby {
+        ruby-align: center;
+
+        /* start | center | space-between | space-around */
+        & rb {}
+
+        & rt {
+            font-family: Montserrat, monospace;
+        }
+    }
+}
+
+p {
+    white-space: nowrap;
+
+    & a {
+        text-decoration: none;
+        margin-right: .5em;
+
+    }
+
+    & span {
+        &.hint {
+            margin-left: .5em;
+            font-size: .6em;
+            font-weight: 400;
+        }
+    }
+}
+
+.heart {
+    color: red;
+}
+
+.oxy {
+    color: green;
+}
+
+.moon {
+    color: blue;
+}
