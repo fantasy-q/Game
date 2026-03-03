@@ -5,12 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Phoenotopia Side Quests</title>
+  <link rel="icon" href="../gale.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.min.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
   <main id="app">
     <div v-for="(type, index) in contents" :key="index">
       <h2>{{type.h2.text}}</h2>
@@ -21,6 +23,7 @@
             <rb>{{el.h3.rb}}</rb>
             <rt>{{el.h3.rt}}</rt>
           </ruby>
+          <span v-if="el.h3.p" class="hint">{{el.h3.p}}</span>
         </h3>
         <div class="link">
           <span v-for="(link, index) in el.links" :key="index">

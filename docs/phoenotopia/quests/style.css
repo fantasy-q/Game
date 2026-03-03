@@ -20,6 +20,7 @@ header {
 body {
     margin: 0 auto;
     padding: 0 1em;
+    padding-bottom: 1em;
     font-family: Montserrat, "Noto Serif SC", serif;
 }
 
@@ -33,10 +34,10 @@ h2 {
     text-align: center;
 }
 
-
 h3 {
     & ruby {
         ruby-align: center;
+        margin-right: .5em;
 
         /* start | center | space-between | space-around */
         & rb {}
@@ -45,8 +46,17 @@ h3 {
             font-family: Montserrat, monospace;
         }
     }
-}
 
+    & span {
+        &.hint {
+            margin-left: .5em;
+            font-size: .5em;
+            font-family: "Noto Sans SC", sans-serif;
+            font-weight: normal;
+
+        }
+    }
+}
 
 div.link {
     display: flex;
@@ -57,48 +67,37 @@ div.link {
         flex-basis: auto;
 
         & a {
-            /* font-size: .8em; */
-            border: 1px solid black;
+            font-size: .8em;
+            /* border: 1px solid black; */
             padding: 0 2px;
             text-decoration: none;
-        }
-    }
-}
+            display: inline-flex;
+            align-items: center;
 
-p {
-    white-space: nowrap;
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 1em;
+                height: 1em;
 
-    & a {
-        text-decoration: none;
-        margin-right: .5em;
-        display: inline-flex;
-        align-items: center;
-        gap: .2em;
-        line-height: 1;
+                /* 使用遮罩技术，背景颜色即为图标颜色 */
+                background-color: currentColor;
 
-        &::before {
-            content: "";
-            display: inline-block;
-            width: 1em;
-            height: 1em;
+                /* 这是一个标准的链接图标路径 (Link Icon) */
+                mask: url("../link.svg") no-repeat center;
 
-            /* 使用遮罩技术，背景颜色即为图标颜色 */
-            background-color: currentColor;
+                mask-size: contain;
+                -webkit-mask-size: contain;
+            }
 
-            /* 这是一个标准的链接图标路径 (Link Icon) */
-            mask: url("../link.svg") no-repeat center;
+            &:visited {}
 
-            mask-size: contain;
-            -webkit-mask-size: contain;
-        }
-    }
+            &:hover {}
 
-    & span {
-        &.hint {
-            margin-left: .5em;
-            font-size: .6em;
-            font-weight: 400;
-            font-family: Montserrat, "Noto Sans SC", Sans;
+            &:active {
+                color: inherit;
+                /* 所有状态都强制继承，永不变色 */
+            }
         }
     }
 }
