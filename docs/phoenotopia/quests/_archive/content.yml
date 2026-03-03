@@ -1,0 +1,27 @@
+main:
+  - h2: { rb: 支线收集, rt: "" }
+  - h3:
+      - { rb: 阿努利宝珠, rt: Anuri Pearlstone }
+      - { rb: 衔尾蛇之钥, rt: Ouro Guard Key }
+      - { rb: 衔尾蛇书卷, rt: Ouroboros Scroll }
+      - { rb: 狗牌, rt: Dog Tag }
+      - { rb: 翠绿宝石, rt: Verdant Stone }
+      - { rb: 兔子模型, rt: Bunny Figurine }
+      - { rb: 金龙鳞片, rt: Gold Dragon Scale }
+      - { rb: 佩罗, rt: Perro }
+      - { rb: GEO票卷, rt: GEO Ticket }
+      - { rb: 古旧胸针, rt: Antique Pin }
+      - { rb: 月神古董, rt: Lunar Artifact }
+  - h2: { rb: 支线收集, rt: "" }
+  - h3:
+      - { rb: 阿努利宝珠, rt: Anuri Pearlstone }
+      - { rb: 衔尾蛇之钥, rt: Ouro Guard Key }
+      - { rb: 衔尾蛇书卷, rt: Ouroboros Scroll }
+      - { rb: 狗牌, rt: Dog Tag }
+      - { rb: 翠绿宝石, rt: Verdant Stone }
+      - { rb: 兔子模型, rt: Bunny Figurine }
+      - { rb: 金龙鳞片, rt: Gold Dragon Scale }
+      - { rb: 佩罗, rt: Perro }
+      - { rb: GEO票卷, rt: GEO Ticket }
+      - { rb: 古旧胸针, rt: Antique Pin }
+      - { rb: 月神古董, rt: Lunar Artifact }
