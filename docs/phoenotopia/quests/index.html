@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phoenotopia Side Quests</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main id="app">
+    <div v-for="(type, index) in contents" :key="index">
+      <h2>{{type.h2.text}}</h2>
+      <section v-for="(el, index) in type.children" :key="index">
+        <h3>
+          <span>【{{el.links.length}}】</span>
+          <ruby>
+            <rb>{{el.h3.rb}}</rb>
+            <rt>{{el.h3.rt}}</rt>
+          </ruby>
+        </h3>
+        <div class="link">
+          <span v-for="(link, index) in el.links" :key="index">
+            <a v-if="link.time" target="_blank" :href="anchor(link.part,link.time)">
+              {{link.text}}
+            </a>
+            <span v-else>{{link.text}}</span>
+          </span>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>

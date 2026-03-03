@@ -1,0 +1,104 @@
+html {
+    color-scheme: light dark;
+}
+
+html[data-theme="dark"] body {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+header {
+    text-align: center;
+
+    & section {
+        display: flex;
+        justify-content: center;
+        gap: .5em;
+    }
+}
+
+body {
+    margin: 0 auto;
+    padding: 0 1em;
+    font-family: Montserrat, "Noto Serif SC", serif;
+}
+
+@media (min-width: 768px) {
+    body {
+        width: 50%;
+    }
+}
+
+h2 {
+    text-align: center;
+}
+
+
+h3 {
+    & ruby {
+        ruby-align: center;
+
+        /* start | center | space-between | space-around */
+        & rb {}
+
+        & rt {
+            font-family: Montserrat, monospace;
+        }
+    }
+}
+
+
+div.link {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+
+    & span {
+        flex-basis: auto;
+
+        & a {
+            /* font-size: .8em; */
+            border: 1px solid black;
+            padding: 0 2px;
+            text-decoration: none;
+        }
+    }
+}
+
+p {
+    white-space: nowrap;
+
+    & a {
+        text-decoration: none;
+        margin-right: .5em;
+        display: inline-flex;
+        align-items: center;
+        gap: .2em;
+        line-height: 1;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+
+            /* 使用遮罩技术，背景颜色即为图标颜色 */
+            background-color: currentColor;
+
+            /* 这是一个标准的链接图标路径 (Link Icon) */
+            mask: url("../link.svg") no-repeat center;
+
+            mask-size: contain;
+            -webkit-mask-size: contain;
+        }
+    }
+
+    & span {
+        &.hint {
+            margin-left: .5em;
+            font-size: .6em;
+            font-weight: 400;
+            font-family: Montserrat, "Noto Sans SC", Sans;
+        }
+    }
+}
